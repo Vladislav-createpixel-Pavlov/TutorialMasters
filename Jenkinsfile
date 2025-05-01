@@ -5,8 +5,8 @@ pipeline {
         jdk 'Java'
     }
     stages {
-     clean рабочей директории
-        stage('git clone project')
+     //clean рабочей директории
+      //  stage('git clone project')
         stage('build') {
             steps {
 
