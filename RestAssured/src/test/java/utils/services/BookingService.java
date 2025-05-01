@@ -32,7 +32,7 @@ public class BookingService extends RestService{
     }
 
     @Step("Получение списка бронирования")
-    @Attachment()
+    //@Attachment()
     public List<BookingIds> getBookings(){
         return given()
                 .spec(REQ_SPEC)
@@ -41,7 +41,7 @@ public class BookingService extends RestService{
                 .jsonPath().getList("$", BookingIds.class);
     }
     @Step("Получение списка бронирования")
-    @Attachment()
+   // @Attachment()
     public RestResponse<List<BookingIds>> getBookings1(){
         return new RestResponse<>(given()
                 .spec(REQ_SPEC)
@@ -49,7 +49,7 @@ public class BookingService extends RestService{
                 .get(),resp -> resp.body().jsonPath().getList("$", BookingIds.class));
     }
     @Step("Получение бронирования с id:{id}")
-    @Attachment(value = "{id}",type = "application/json",fileExtension = "json'")
+    //@Attachment(value = "{id}",type = "application/json",fileExtension = "json'")
     public BookingOrder getBooking(int id){
         return  given()
                 .spec(REQ_SPEC)
