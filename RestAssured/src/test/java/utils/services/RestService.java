@@ -22,6 +22,7 @@ public abstract class RestService {
                 .setBaseUri(BASE_URl)
                 .setBasePath(getBasePath())
                 .setContentType(ContentType.JSON)
+                .setAccept(ContentType.ANY)
                 .build();
     }
 }

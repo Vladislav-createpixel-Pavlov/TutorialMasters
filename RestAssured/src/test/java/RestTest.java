@@ -14,7 +14,8 @@ import utils.RestWrapper;
 import utils.services.RestResponse;
 
 import java.time.LocalDate;
-import java.util.List;;
+import java.util.List;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class RestTest {
     private static RestWrapper api;
@@ -31,7 +32,6 @@ public class RestTest {
     @Owner(value="")
     public void getUsers(){
         List<BookingIds> usersResponse = api.booking.getBookings();
-        //System.out.println(usersResponse.getFirst().getIds());
     }
     @Test
     @DisplayName("Получение бронирования")
@@ -40,12 +40,8 @@ public class RestTest {
     @Owner(value="")
     public void getUser(){
         PodamFactory factory = new PodamFactoryImpl();
-        //factory.getStrategy().addOrReplaceAttributeStrategy(LocalDate.class,new DateTimeManufacturer)
         RestResponse<List<BookingIds>> userResponse = api.booking.getBookings1();
         userResponse.validate("UsersTemplate.json");
-       // BookingOrder usersResponse = api.booking.getBooking(1);
-        //usersResponse.validate("UsersTemplate.json");
-        //System.out.println(usersResponse.getFirst().getIds());
     }
     @Test
     @DisplayName("Получение бронирования")
@@ -54,8 +50,6 @@ public class RestTest {
     @Owner(value="")
     public void getUser1(){
         BookingOrder usersResponse = api.booking.getBooking(1);
-        //usersResponse.validate("UsersTemplate.json");
-        //System.out.println(usersResponse.getFirst().getIds());
     }
     @DisplayName("Создание бронирования")
     @Story("Create booking")
@@ -63,9 +57,9 @@ public class RestTest {
     @Test public void createUser(){
         BookingOrder bo = BookingGenerator.createOrder(LocalDate.now(),LocalDate.now().plusDays(7));
         BookingResponce rs = api.booking.createBooking(bo);
-//        assertThat(rs)
-//                .isNotNull()
-//                .extracting(CreateUserResponse::getName)
-//                .isEqualTo(rq.getName());
+        assertThat(rs)
+                .isNotNull()
+                .extracting(BookingResponce::getBookingid)
+                .isEqualTo(bo.getLastname());
     }
 }
