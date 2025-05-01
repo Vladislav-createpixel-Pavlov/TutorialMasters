@@ -186,7 +186,7 @@
                 <inherited>false</inherited>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
-                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                    <resultsDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/TutorialMaster/RestAssured/target/allure-results</resultsDirectory>
                 </configuration>
             </plugin>
             <plugin>
