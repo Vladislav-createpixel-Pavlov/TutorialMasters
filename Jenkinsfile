@@ -12,7 +12,7 @@ pipeline {
 
                 echo "${packageType}"
                 bat "mvn clean"
-                bat "mvn test -Dtest=${packageType}"
+                bat "mvn test -Dtest=${packageType}.java"
             }
             post {
                 // If Maven was able to run the tests, even if some of the test
