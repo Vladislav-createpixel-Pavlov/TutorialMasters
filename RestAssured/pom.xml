@@ -225,7 +225,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/allure-results</outputDirectory>
+                            <outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/TutorialMaster/RestAssured/target/allure-results</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>src/test/resources</directory>
