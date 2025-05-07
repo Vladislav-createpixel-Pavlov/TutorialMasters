@@ -1,9 +1,6 @@
 package utils.services;
 
-import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
-import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.Cookies;
 import pojos.BookingIds;
 import pojos.BookingOrder;
@@ -31,18 +28,18 @@ public class BookingService extends RestService{
         return given().spec(REQ_SPEC).body(bo).post().as(BookingResponce.class);
     }
 
-    @Step("Получение списка бронирования")
-    //@Attachment()
-    public List<BookingIds> getBookings(){
-        return given()
-                .spec(REQ_SPEC)
-                .log().all()
-                .get()
-                .jsonPath().getList("$", BookingIds.class);
-    }
+//    @Step("Получение списка бронирования")
+//    //@Attachment()
+//    public List<BookingIds> getBookings(){
+//        return given()
+//                .spec(REQ_SPEC)
+//                .log().all()
+//                .get()
+//                .jsonPath().getList("$", BookingIds.class);
+//    }
     @Step("Получение списка бронирования")
    // @Attachment()
-    public RestResponse<List<BookingIds>> getBookings1(){
+    public RestResponse<List<BookingIds>> getBookings(){
         return new RestResponse<>(given()
                 .spec(REQ_SPEC)
                 .log().all()
@@ -56,6 +53,7 @@ public class BookingService extends RestService{
                 .log().all()
                 .get("/" + id)
                 .as(BookingOrder.class);
+
     }
 
 }

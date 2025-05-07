@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/features",
-        //glue = "src/test/java",
-        tags = "@message",
+       // glue = "src/test/java",
+        tags = "@perevod",
         plugin = {
         "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm",
         "progress",
@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
        // plugin = {"pretty","html:Score.html"}
         //name = "Успешные тест"
         //snippets = CucumberOptions.SnippetType.CAMELCASE
-//        name = "^Успешное|Успешная.*"
+//       name = "^Успешное|Успешная.*"
 )
 public class TestRunner
 {

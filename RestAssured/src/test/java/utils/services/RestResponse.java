@@ -17,6 +17,9 @@ public class RestResponse<T> {
     public void validate(String schemaPath){
         response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaPath));
     }
+    public void assertResponseCode(int code){
+        response.then().statusCode(code);
+    }
 
     public T extract(){
         return extractor.apply(response);
