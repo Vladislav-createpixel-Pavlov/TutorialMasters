@@ -186,7 +186,7 @@
                 <inherited>false</inherited>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
-                    <resultsDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/TutorialMaster/target/allure-results</resultsDirectory>
+                    <resultsDirectory>allure-results</resultsDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -225,7 +225,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>C:/ProgramData/Jenkins/.jenkins/workspace/TutorialMaster/target/allure-results</outputDirectory>
+                            <outputDirectory>allure-results</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>src/test/resources</directory>
